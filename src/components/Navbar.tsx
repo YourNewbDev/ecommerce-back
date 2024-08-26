@@ -1,27 +1,63 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
+    <>
       {/* Sidebar for larger screens */}
-      <nav className="hidden md:flex md:flex-col md:fixed md:inset-y-0 md:left-0 md:w-64 md:bg-gray-800 md:text-white">
+      <nav className="hidden md:flex md:flex-col md:fixed md:inset-y-0 md:left-0 md:w-56 md:bg-gray-800 md:text-white">
         <div className="p-4">
-          <h1 className="text-2xl font-bold">Sidebar</h1>
+          <h1 className="text-2xl font-bold text-center">
+            E-COMMERCE ADMIN PANEL
+          </h1>
         </div>
-        <ul className="mt-6 space-y-2">
-          <li><a href="#" className="block p-2 hover:bg-gray-700 rounded">Home</a></li>
-          <li><a href="#" className="block p-2 hover:bg-gray-700 rounded">About</a></li>
-          <li><a href="#" className="block p-2 hover:bg-gray-700 rounded">Services</a></li>
-          <li><a href="#" className="block p-2 hover:bg-gray-700 rounded">Contact</a></li>
+        <ul className="text-center mt-6 space-y-2 m-5 flex-grow">
+          <li>
+            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+              Product
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+              Category
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+              Order
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+              User
+            </a>
+          </li>
+        </ul>
+
+        <ul className="text-center m-5 mt-auto space-y-2">
+          <li>
+            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+              Settings
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+              Logout
+            </a>
+          </li>
         </ul>
       </nav>
 
       {/* Navbar for small screens */}
       <div className="md:hidden fixed top-0 left-0 w-full bg-gray-800 text-white z-50">
         <div className="flex items-center justify-between p-4">
-          <h1 className="text-2xl font-bold">Navbar</h1>
+          <h1 className="text-2xl font-bold">E-COMMERCE</h1>
           <button onClick={() => setIsOpen(!isOpen)} className="text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,22 +75,32 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className={`bg-gray-800 p-4 text-center ${isOpen ? 'block' : 'hidden'}`}>
-          <a href="#" className="block text-white hover:text-gray-400 py-2">Home</a>
-          <a href="#" className="block text-white hover:text-gray-400 py-2">About</a>
-          <a href="#" className="block text-white hover:text-gray-400 py-2">Services</a>
-          <a href="#" className="block text-white hover:text-gray-400 py-2">Contact</a>
+        <div
+          className={`bg-gray-800 p-4 text-center ${
+            isOpen ? "block" : "hidden"
+          }`}
+        >
+          <a href="#" className="block text-white hover:bg-gray-900 py-2">
+            Home
+          </a>
+          <a href="#" className="block text-white hover:bg-gray-900 py-2">
+            About
+          </a>
+          <a href="#" className="block text-white hover:bg-gray-900 py-2">
+            Services
+          </a>
+          <a href="#" className="block text-white hover:bg-gray-900 py-2">
+            Contact
+          </a>
+          <a href="#" className="mt-8 block text-white hover:bg-gray-900 py-2">
+            Settings
+          </a>
+          <a href="#" className="block text-white hover:bg-gray-900 py-2">
+            Logout
+          </a>
         </div>
       </div>
-
-      {/* Main Content */}
-      <div className="flex-1 md:ml-64 p-6">
-        <h1 className="text-3xl font-bold mb-4">Main Content</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-    </div>
+    </>
   );
 };
 
