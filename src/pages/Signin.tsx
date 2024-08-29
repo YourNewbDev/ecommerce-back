@@ -15,6 +15,7 @@ const Signin = () => {
 
   const onSubmit: SubmitHandler<ISignIn> = (data) => {
     mutation.mutate(data)
+    console.log(data)
   }
 
   
