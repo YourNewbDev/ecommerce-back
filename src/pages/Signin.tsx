@@ -5,11 +5,19 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
 const Signin = () => {
-  const { register, handleSubmit} = useForm<ISignIn>()
+  const { register, handleSubmit } = useForm<ISignIn>()
 
   const mutation = useMutation({
     mutationFn: async(data: ISignIn) => {
-      return await axios.post("")
+      const response = await axios.post("http://localhost:3000/auth/admin/signin", data)
+      return response
+    },
+    onError: (error: any) => {
+      console.error(error.response)
+    },
+    onSuccess: (data) => {
+      console.log(data)
+  
     }
   })
 
@@ -18,7 +26,7 @@ const Signin = () => {
     console.log(data)
   }
 
-  
+
 
   return (
     <>
@@ -30,26 +38,27 @@ const Signin = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label
-                htmlFor="email"
                 className="block mb-2 text-sm font-medium text-gray-600"
               >
                 Email Address or Username
               </label>
               <input
-                type="email"
-                id="email"
+                {...register("email")}
+                {...register("username")}
+                type="text"
+                id="emailOrUsername"
                 className="w-full px-4 py-2 text-gray-700 bg-gray-200 border rounded-md focus:outline-none focus:ring focus:ring-indigo-300"
-                placeholder="Enter your email"
+                placeholder="Enter your email or username"
               />
             </div>
             <div className="mb-6">
               <label
-                htmlFor="password"
                 className="block mb-2 text-sm font-medium text-gray-600"
               >
                 Password
               </label>
               <input
+                {...register("password", {required: true})}
                 type="password"
                 id="password"
                 className="w-full px-4 py-2 text-gray-700 bg-gray-200 border rounded-md focus:outline-none focus:ring focus:ring-indigo-300"
