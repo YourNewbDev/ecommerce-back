@@ -5,6 +5,7 @@ import Home from "./pages/Home.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signin from "./pages/Signin.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient()
 

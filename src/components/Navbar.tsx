@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import useLogout from "../customHooks/useLogout";
+import { ToastContainer } from "react-toastify";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {handleLogout} = useLogout()
 
   return (
     <>
@@ -47,9 +50,9 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
+            <button onClick={handleLogout} type="button" className="content-center p-2 hover:bg-gray-900 rounded">
               Logout
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
@@ -100,6 +103,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
+      <ToastContainer/>
     </>
   );
 };
