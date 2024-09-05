@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signin from "./pages/Signin.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import 'react-toastify/dist/ReactToastify.css';
+import Product from "./pages/Product.tsx";
 
 const queryClient = new QueryClient()
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter ([
   {
     path: 'signin',
     element: <Signin/>,
+  },
+  {
+    path: 'product',
+    element: <Product/>,
   },
 
 
