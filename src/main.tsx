@@ -7,6 +7,7 @@ import Signin from "./pages/Signin.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import 'react-toastify/dist/ReactToastify.css';
 import Product from "./pages/Product.tsx";
+import Category from "./pages/Category.tsx";
 
 const queryClient = new QueryClient()
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter ([
   {
     path: 'product',
     element: <Product/>,
+  },
+  {
+    path: 'category',
+    element: <Category/>,
   },
 
 

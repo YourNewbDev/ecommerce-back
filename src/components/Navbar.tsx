@@ -13,7 +13,7 @@ const Navbar = () => {
       <nav className="hidden md:flex md:flex-col md:fixed md:inset-y-0 md:left-0 md:w-56 md:bg-gray-800 md:text-white">
         <div className="p-4">
           <h1 className="text-2xl font-bold text-center">
-            E-COMMERCE ADMIN PANEL
+            E-COM. PANEL
           </h1>
         </div>
         <ul className="text-center mt-6 space-y-2 m-5 flex-grow">
@@ -25,11 +25,9 @@ const Navbar = () => {
           <Link to={'/product'} className="block p-2 hover:bg-gray-900 rounded">
             Product
           </Link>
-          <li>
-            <a href="#" className="block p-2 hover:bg-gray-900 rounded">
-              Category
-            </a>
-          </li>
+          <Link to={'/category'} className="block p-2 hover:bg-gray-900 rounded">
+            Category
+          </Link>
           <li>
             <a href="#" className="block p-2 hover:bg-gray-900 rounded">
               Order
@@ -59,7 +57,7 @@ const Navbar = () => {
       {/* Navbar for small screens */}
       <div className="md:hidden fixed top-0 left-0 w-full bg-gray-800 text-white z-50">
         <div className="flex items-center justify-between p-4">
-          <h1 className="text-2xl font-bold">E-COMMERCE</h1>
+          <h1 className="text-2xl font-bold">E-COM. PANEL</h1>
           <button onClick={() => setIsOpen(!isOpen)} className="text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -82,16 +80,19 @@ const Navbar = () => {
             }`}
         >
           <a href="#" className="block text-white hover:bg-gray-900 py-2">
-            Home
+            Dashboard
+          </a>
+          <Link to={'/product'} className="block text-white hover:bg-gray-900 py-2">
+            Product
+          </Link>
+          <Link to={'/category'} className="block text-white hover:bg-gray-900 py-2">
+            Category
+          </Link>
+          <a href="#" className="block text-white hover:bg-gray-900 py-2">
+            Order
           </a>
           <a href="#" className="block text-white hover:bg-gray-900 py-2">
-            About
-          </a>
-          <a href="#" className="block text-white hover:bg-gray-900 py-2">
-            Services
-          </a>
-          <a href="#" className="block text-white hover:bg-gray-900 py-2">
-            Contact
+            User
           </a>
           <a href="#" className="mt-8 block text-white hover:bg-gray-900 py-2">
             Settings
